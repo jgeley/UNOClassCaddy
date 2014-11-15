@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @preference.kind %>
+</p>
+
+<p>
+  <strong>Starttime:</strong>
+  <%= @preference.startTime %>
+</p>
+
+<p>
+  <strong>Endtime:</strong>
+  <%= @preference.endTime %>
+</p>
+
+<p>
+  <strong>Sessionid:</strong>
+  <%= @preference.sessionid %>
+</p>
+
+<%= link_to 'Edit', edit_preference_path(@preference) %> |
+<%= link_to 'Back', preferences_path %>

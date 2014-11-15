@@ -1,0 +1,53 @@
+<%= form_for(@uno_class) do |f| %>
+  <% if @uno_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@uno_class.errors.count, "error") %> prohibited this uno_class from being saved:</h2>
+
+      <ul>
+      <% @uno_class.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :department %><br>
+    <%= f.text_field :department %>
+  </div>
+  <div class="field">
+    <%= f.label :course %><br>
+    <%= f.number_field :course %>
+  </div>
+  <div class="field">
+    <%= f.label :section %><br>
+    <%= f.number_field :section %>
+  </div>
+  <div class="field">
+    <%= f.label :startTime %><br>
+    <%= f.time_select :startTime %>
+  </div>
+  <div class="field">
+    <%= f.label :endTime %><br>
+    <%= f.time_select :endTime %>
+  </div>
+  <div class="field">
+    <%= f.label :days %><br>
+    <%= f.text_field :days %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :instructor %><br>
+    <%= f.text_field :instructor %>
+  </div>
+  <div class="field">
+    <%= f.label :sessionId %><br>
+    <%= f.text_field :sessionId %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

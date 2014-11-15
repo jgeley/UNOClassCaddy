@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @uno_class.department %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @uno_class.course %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @uno_class.section %>
+</p>
+
+<p>
+  <strong>Starttime:</strong>
+  <%= @uno_class.startTime %>
+</p>
+
+<p>
+  <strong>Endtime:</strong>
+  <%= @uno_class.endTime %>
+</p>
+
+<p>
+  <strong>Days:</strong>
+  <%= @uno_class.days %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @uno_class.location %>
+</p>
+
+<p>
+  <strong>Instructor:</strong>
+  <%= @uno_class.instructor %>
+</p>
+
+<p>
+  <strong>Sessionid:</strong>
+  <%= @uno_class.sessionId %>
+</p>
+
+<%= link_to 'Edit', edit_uno_class_path(@uno_class) %> |
+<%= link_to 'Back', uno_classes_path %>
