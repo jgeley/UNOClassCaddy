@@ -1,5 +1,5 @@
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   pool: 5
   timeout: 5000
 
@@ -12,7 +12,9 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
   database: HEROKU_POSTGRESQL_BLUE_URL
   host: ec2-54-243-48-204.compute-1.amazonaws.com
   port: 5432
@@ -22,7 +24,9 @@ test:
   timeout: 5000
 
 production:
-  <<: *default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
   database: HEROKU_POSTGRESQL_BLUE_URL
   host: ec2-54-243-48-204.compute-1.amazonaws.com
   port: 5432
