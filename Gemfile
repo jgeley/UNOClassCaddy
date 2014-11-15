@@ -3,10 +3,10 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.8'
-gem 'pg'
+#gem 'pg'
 #gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 group :development do
-  
+  gem 'sqlite3', '1.3.8'
 end
 gem 'fullcalendar-rails'
 gem 'sass-rails', '4.0.3'
@@ -23,5 +23,5 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
-  
+  gem 'pg'
 end
