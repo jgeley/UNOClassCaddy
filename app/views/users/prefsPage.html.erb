@@ -1,0 +1,65 @@
+<header>
+<%= image_tag 'UNO_Logo1.jpg', size: '150x150' %>
+<p>UNO ClassCaddy</p>
+</header>
+
+<section class="information" id="main">
+
+	<!-- This first section serves as a sort of welcome to the site, with a few paragraphs and a picture of the store.-->
+	<section class="information" id="welcome">
+	<p>If desired, you may add preferences which our algorithm will consider when creating your possible schedules.  Once finished, hit "See Schedules" to see the results!</p>
+	</section>
+	
+<%= form_for Preference.new do |f| %>
+No classes before: <%= time_field(:preference, :startTime) %>
+<br />
+<%= f.text_area :kind, value: "1",style: "display:none;" %>
+<%= f.text_area :sessionid, value: request.session_options[:id], style: "display:none;" %>
+<%= f.submit %>
+<% end %>
+<%= form_for Preference.new do |f| %>
+No classes after: <%= time_field(:preference,:startTime) %>
+<br />
+<%= f.text_area :kind, value: 2, style: "display:none;" %>
+<%= f.text_area :sessionid, value: request.session_options[:id], style: "display:none;" %>
+<%= f.submit %>
+<% end %>
+<%= form_for Preference.new do |f| %>
+No classes between: <%= time_field(:preference,:startTime) %> and <%= time_field(:preference,:endTime) %>
+<br />
+<%= f.text_area :kind, value: 3, style: "display:none;" %>
+<%= f.text_area :sessionid, value: request.session_options[:id], style: "display:none;" %>
+<%= f.submit %>
+<% end %>
+<br />
+Preferences<br /><br />
+<% Preference.all.each do |prefs| %>
+		<%if prefs.sessionid.to_s == request.session_options[:id].to_s%>
+			<%if prefs.kind == 1%>
+				<%= "No classes before "%>
+				<%= prefs.startTime.to_formatted_s(:time) %>
+				
+				<%end%>
+			<%if prefs.kind == 2%>
+				<%= "No classes after "%>
+				<%= prefs.startTime.to_formatted_s(:time) %>
+			<%end%>
+			<%if prefs.kind == 3%>
+			<%= "No classes between "%>
+			<%= prefs.startTime.to_formatted_s(:time) %>
+			<%= " and "%>
+			<%= prefs.endTime.to_formatted_s(:time) %>
+			<%end%>
+			<%= link_to 'Destroy', prefs, method: :delete, data: { confirm: 'Are you sure?' } %>
+			<br />
+		<%end%>
+		<% end %>
+<br />
+<%= link_to "Continue", :controller => :users, :action => :nextPage%>
+
+</section>
+
+<!-- Creation information is included in this footer.-->
+<footer>Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
+
+</html>

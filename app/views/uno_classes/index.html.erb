@@ -1,0 +1,43 @@
+<h1>Listing uno_classes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Department</th>
+      <th>Course</th>
+      <th>Section</th>
+      <th>Starttime</th>
+      <th>Endtime</th>
+      <th>Days</th>
+      <th>Location</th>
+      <th>Instructor</th>
+      <th>Sessionid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uno_classes.each do |uno_class| %>
+      <tr>
+        <td><%= uno_class.department %></td>
+        <td><%= uno_class.course %></td>
+        <td><%= uno_class.section %></td>
+        <td><%= uno_class.startTime %></td>
+        <td><%= uno_class.endTime %></td>
+        <td><%= uno_class.days %></td>
+        <td><%= uno_class.location %></td>
+        <td><%= uno_class.instructor %></td>
+        <td><%= uno_class.sessionId %></td>
+        <td><%= link_to 'Show', uno_class %></td>
+        <td><%= link_to 'Edit', edit_uno_class_path(uno_class) %></td>
+        <td><%= link_to 'Destroy', uno_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Uno class', new_uno_class_path %>

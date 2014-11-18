@@ -1,0 +1,2 @@
+SoftwareEngineeringApp::Application.config.secret_key_base = 'a5b7e1276f2b75f74e6a167dd3719910e25db65ce99db4332d43a95fed074d4b7f25ecd532327118
+72362b5268f7573bfb9973738d6f94c5ed16605992a54fcc'

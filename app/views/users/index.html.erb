@@ -1,0 +1,79 @@
+
+<header>
+<%= image_tag 'UNO_Logo1.jpg', size: '150x150' %>
+<p>UNO ClassCaddy</p>
+</header>
+
+<section class="information" id="main">
+
+	<section class="information" id="welcome">
+	<p><strong>Welcome to ClassCaddy, the course scheduling assistant for UNO students!</strong>  To begin, please select the term you're considering.  Then, pick the classes
+	you're interested in taking, and hit Continue.  Fields marked with an asterisk (*) are required.</p>
+	</section>
+	
+<%= form_for UnoClass.new do |f| %>
+Department: <%= f.select(:department, options_for_select([['Accounting',  'ACCT'],['Aerospace Studies',  'AERO'],['Anthropology',  'ANTH'],['Architectural Engineering',  'AE'],['Architecture','ARCH'],
+['Art','ART'],['Aviation',  'AVN'],['Bioinformatics',  'BIOI'],['Biology',  'BIOL'],['Biomedical Informatics',  'BMI'],['Black Studies',  'BLST'],['Broadcasting',  'BRCT'],
+['Business Administration',  'BSAD'],['Chemistry',  'CHEM'],['Chinese',  'CHIN'],['Civil Engineering',  'CIVE'],['College of IS&T',  'CIST'],['Communication',  'COMM'],['Computer & Electronics Eng',  'CEEN'],
+['Computer Science',  'CSCI'],['Construction Engineering',  'CONE'],['Construction Management',  'CNST'],['Cooperative Education',  'COOP'],['Counseling',  'COUN'],['Criminology & Criminal Justice',  'CRCJ'],
+['Design',  'DSGN'],['Economics',  'ECON'],['Educational Leadership',  'EDL'],['Educational Prof Sequence',  'EDUC'],['Electrical Engineering',  'ELEC'],['Emergency Management',  'EMGT'],
+['Engineering',  'ENGR'],['English',  'ENGL'],['Environmental Engineering',  'ENVE'],['Environmental Studies',  'ENVN'],['Finance and Banking',  'FNBK'],['Fire Service Management',  'FSMT'],
+['Food Science & Technology',  'FSCI'],['Foreign Lang & Literature',  'FLNG'],['French',  'FREN'],['Geography',  'GEOG'],['Geology',  'GEOL'],['German',  'GERM'],['Gerontology',  'GERO'],
+['Goodrich Program',  'GDRH'],['Health Education',  'HED'],['Health, Phys Ed & Recreation',  'HPER'],['Hebrew',  'HEBR'],['History',  'HIST'],['Honors Program',  'HONR'],['Horticulture',  'HORT'],
+['Humanities',  'HUMN'],['ILUNO',  'ILUN'],['IPD',  'IPD'],['IT Innovation',  'ITIN'],['Info Assurance - Science',  'IASC'],['Info Systems & Quant Analysis',  'ISQA'],['International Studies',  'INST'],
+['Japanese',  'JAPN'],['Journalism',  'JOUR'],['Latin',  'LATN'],['Latino/Latin American Studies',  'LLS'],['Law and Society',  'LAWS'],['Management',  'MGMT'],['Marketing',  'MKT'],
+['Master of Fine Arts Writing',  'MFAW'],['Mathematics',  'MATH'],['Mathematics for Teachers',  'MTCH'],['Mechanical Engineering',  'MENG'],['Military Science',  'MILS'],['Music',  'MUS'],
+['Native American Studies',  'NAMS'],['Natural Sciences',  'NSCI'],['Neuroscience',  'NEUR'],['Philosophy',  'PHIL'],['Physical Education',  'PE'],['Physical Education Activities',  'PEA'],
+['Physics',  'PHYS'],['Political Science',  'PSCI'],['Psychology',  'PSYC'],['Public Administration',  'PA'],['Real Estate & Land Use Econ',  'RELU'],['Recreation-Leisure Study',  'RLS'],
+['Religion',  'RELI'],['Russian',  'RUSS'],['Social Work',  'SOWK'],['Sociology',  'SOC'],['Spanish',  'SPAN'],['Spec Educ & Comm Disorders',  'SPED'],['Speech',  'SPCH'],['Statistics',  'STAT'],
+['Teacher Education',  'TED'],['Theatre',  'THEA'],['University Seminar',  'US'],['Urban Studies',  'UBNS'],['Womens and Gender Studies',  'WGST'],['Writers Workshop',  'WRWS']])
+) %>
+<% @classList= getClassesNums()%>
+<br />
+Course : <%= f.select(:course, options_for_select(@classList)) %>
+<br />
+Section : <%= f.text_area :section %>
+<br />
+<%= f.text_area :sessionId, value: request.session_options[:id], style: "display:none;" %>
+<%= f.submit %>
+<% end %>
+<br />
+<table>
+	<thead>
+		<tr>
+			<th>Department</th>
+			<th>Course</th>
+			<th>Section</th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% UnoClass.all.each do |uno_class| %>
+		<%if uno_class.sessionId.to_s == request.session_options[:id].to_s%>
+		<tr>
+			<td><%= uno_class.department %></td>
+			<td><%= uno_class.course %></td>
+			<td><%= uno_class.section %></td>
+			<td><%= link_to 'Destroy', uno_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+		<%end%>
+		<% end %>
+	</tbody>
+</table>
+<br />
+<%= link_to "Continue", :controller => :users, :action => :prefsPage%> 
+
+</section>
+<!-- Creation information is included in this footer.-->
+<footer>Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
+
+</html>
+
+<script>
+		// $('#departSelect').on('change', function (event) {
+			// var selected_resource_id = $(this).val();
+			// $.ajax(url: '/users/changeclasses', 
+			// data: { id: selected_resource_id})
+		// });
+</script>

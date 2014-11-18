@@ -1,0 +1,90 @@
+	
+			
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+		<div id="title1" data-lat="<%= @title1 %>"></div>
+		<div id="end1" data-lat="<%= @end1 %>"></div>
+		<div id="start1" data-lat="<%= @start1 %>"></div>
+		<div id="title2" data-lat="<%= @title2 %>"></div>
+		<div id="end2" data-lat="<%= @end2 %>"></div>
+		<div id="start2" data-lat="<%= @start2 %>"></div>
+		<div id="title3" data-lat="<%= @title3 %>"></div>
+		<div id="end3" data-lat="<%= @end3 %>"></div>
+		<div id="start3" data-lat="<%= @start3 %>"></div>
+		<div id="title4" data-lat="<%= @title4 %>"></div>
+		<div id="end4" data-lat="<%= @end4 %>"></div>
+		<div id="start4" data-lat="<%= @start4 %>"></div>
+		<div id="title5" data-lat="<%= @title5 %>"></div>
+		<div id="end5" data-lat="<%= @end5 %>"></div>
+		<div id="start5" data-lat="<%= @start5 %>"></div>
+		<%= link_to "Back", :controller => :users, :action => :prefsPage%> 
+		<%= link_to "PreviousCalendar", :controller => :users, :action => :nextPage, :myAction => "down"%>
+		<%= link_to "NextCalendar", :controller => :users, :action => :nextPage, :myAction => "up"%>
+		PageNum <%=@pageNum%>
+		<script>
+		var title1 = $("#title1").data("lat");
+		var end1 = $("#end1").data("lat");
+		var start1 = $("#start1").data("lat");
+		var title2 = $("#title2").data("lat");
+		var end2 = $("#end2").data("lat");
+		var start2 = $("#start2").data("lat");
+		var title3 = $("#title3").data("lat");
+		var end3 = $("#end3").data("lat");
+		var start3 = $("#start3").data("lat");
+		var title4 = $("#title4").data("lat");
+		var end4 = $("#end4").data("lat");
+		var start4 = $("#start4").data("lat");
+		var title5 = $("#title5").data("lat");
+		var end5 = $("#end5").data("lat");
+		var start5 = $("#start5").data("lat");
+			$(document).ready(function() {
+
+				// page is now ready, initialize the calendar...
+
+				$('#calendar').fullCalendar({
+					defaultView : 'agendaWeek',
+					//contentHeight: "auto",
+					height : 600,
+					weekends : false,
+					header: {
+        				left: '',
+        				center: 'title',
+        				right: ''
+    				},
+					events : [{title:title1,end: end1,start: start1, allDay: false},
+							  {title:title2,end: end2,start: start2, allDay: false},
+							  {title:title3,end: end3,start: start3, allDay: false},
+							  {title:title4,end: end4,start: start4, allDay: false},
+							  {title:title5,end: end5,start: start5, allDay: false}
+					]
+
+				});
+
+			});
+		</script>
+	</head>
+	
+	<header>
+	<%= image_tag 'UNO_Logo1.jpg', size: '150x150' %>
+	<p>UNO ClassCaddy</p>
+	</header>
+	
+	<section class="information" id="main">
+		<section class="information" id="welcome">
+		<h2>Schedule N</h2>
+		</section>
+	<body>
+		<div id='calendar'></div>
+		
+		<a href="index"><input type="button" value="Edit Classes" /></a> <p></p>
+		<a href="preferences"><input type="button" value="Edit Preferences" /></a>
+
+		<a href="">View Printer-Friendly Version</a>
+		<a href="">Email this schedule</a>
+	</body>
+	</section>
+
+	<!-- Creation information is included in this footer.-->
+	<footer>Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
+
