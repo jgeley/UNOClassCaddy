@@ -1,4 +1,16 @@
 
+<header>
+<%= image_tag 'UNO_Logo1.jpg', size: '150x150' %>
+<p>UNO ClassCaddy</p>
+</header>
+
+<section class="information" id="main">
+
+	<section class="information" id="welcome">
+	<p><strong>Welcome to ClassCaddy, the course scheduling assistant for UNO students!</strong>  To begin, please select the term you're considering.  Then, pick the classes
+	you're interested in taking, and hit Continue.  Fields marked with an asterisk (*) are required.</p>
+	</section>
+	
 <%= form_for UnoClass.new do |f| %>
 Department: <%= f.select(:department, options_for_select([['Accounting',  'ACCT'],['Aerospace Studies',  'AERO'],['Anthropology',  'ANTH'],['Architectural Engineering',  'AE'],['Architecture','ARCH'],
 ['Art','ART'],['Aviation',  'AVN'],['Bioinformatics',  'BIOI'],['Biology',  'BIOL'],['Biomedical Informatics',  'BMI'],['Black Studies',  'BLST'],['Broadcasting',  'BRCT'],
@@ -51,6 +63,12 @@ Section : <%= f.text_area :section %>
 </table>
 <br />
 <%= link_to "Continue", :controller => :users, :action => :prefsPage%> 
+</section>
+<!-- Creation information is included in this footer.-->
+<footer>Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
+
+</html>
+
 <script>
 		// $('#departSelect').on('change', function (event) {
 			// var selected_resource_id = $(this).val();

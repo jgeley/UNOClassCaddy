@@ -1,4 +1,16 @@
 
+<header>
+<%= image_tag 'UNO_Logo1.jpg', size: '150x150' %>
+<p>UNO ClassCaddy</p>
+</header>
+
+<section class="information" id="main">
+
+	<!-- This first section serves as a sort of welcome to the site, with a few paragraphs and a picture of the store.-->
+	<section class="information" id="welcome">
+	<p>If desired, you may add preferences which our algorithm will consider when creating your possible schedules.  Once finished, hit "See Schedules" to see the results!</p>
+	</section>
+	
 <%= form_for Preference.new do |f| %>
 No classes before: <%= time_field(:preference, :startTime) %>
 <br />
@@ -45,3 +57,10 @@ Preferences<br /><br />
 		<% end %>
 <br />
 <%= link_to "Continue", :controller => :users, :action => :nextPage%>
+
+</section>
+
+<!-- Creation information is included in this footer.-->
+<footer>Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
+
+</html>
