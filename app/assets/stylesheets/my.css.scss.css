@@ -6,9 +6,6 @@
 header{
     /*This sets the background color to teal for the header.*/
     background-color:  rgb(200,0,0);
-
-    /*Setting the font for the header*/
-    font: 770% "Impact", serif;
 	
 	height: 150px;
 	
@@ -18,6 +15,10 @@ header{
 }
 
 header p {
+
+    /*Setting the font for the header*/
+    font: 770% "Impact", serif;
+	
 	display: inline;
 	
 	vertical-align: top;
@@ -104,9 +105,17 @@ ul {
 	margin-right: 5%;
 }
 
-#calendarspot {
+#calendar {
 	width: 200px;
 	height: 650px;
+}
+
+.fc-header-title {
+
+display: none;
+
+vertical-align: top;
+
 }
 
 footer{
