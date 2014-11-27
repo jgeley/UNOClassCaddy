@@ -10,7 +10,7 @@
 	<p><strong>Welcome to ClassCaddy, the course scheduling assistant for UNO students!</strong>  To begin, please select the term you're considering.  Then, pick the classes
 	you're interested in taking, and hit Continue.  Fields marked with an asterisk (*) are required.</p>
 	</section>
-	
+	Session: <%=request.session_options[:id] %>
 <%= form_for UnoClass.new do |f| %>
 Department: <%= f.select(:department, options_for_select([['Accounting',  'ACCT'],['Aerospace Studies',  'AERO'],['Anthropology',  'ANTH'],['Architectural Engineering',  'AE'],['Architecture','ARCH'],
 ['Art','ART'],['Aviation',  'AVN'],['Bioinformatics',  'BIOI'],['Biology',  'BIOL'],['Biomedical Informatics',  'BMI'],['Black Studies',  'BLST'],['Broadcasting',  'BRCT'],
