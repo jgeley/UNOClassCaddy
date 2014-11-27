@@ -38,7 +38,6 @@ class UsersController < ApplicationController
       session[:calendars] = getCalendars()
     end
     session[:calendars] = getCalendars()
-    @calendars = session[:calendars]
     setCalendarVars(@calendars, @pageNum)
     render "nextPage"
   end
@@ -142,7 +141,6 @@ class UsersController < ApplicationController
   def getCalendars()
     classes = getAllClasses()
     puts "All Classes"
-    p classes
     calendadrs = Array.new
     allClasses = splitClasses(classes)
     allCalendars = Array.new
