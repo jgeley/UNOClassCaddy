@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   def setCalendarVars(cals, page)
     resetVars()
     currentClass = 0
-    puts "Setting page to " + page
+    puts "Setting page to " + page.to_s
     cals[page].each do |c|
       c[1] = addTimeIfNecessary(c[1])
       c[2] = addTimeIfNecessary(c[2])
