@@ -27,8 +27,6 @@ class UsersController < ApplicationController
 
   def nextPage
     session[:page_num] = params[:myAction].to_i
-    puts "\n\n\n\n\n\n\nSession Page Num"
-    puts session[:page_num]
     if(session[:page_num]== nil)
       session[:page_num]= 1
     end
@@ -41,7 +39,6 @@ class UsersController < ApplicationController
     end
     session[:calendars] = getCalendars()
     @calendars = session[:calendars]
-    p @calendars
     setCalendarVars(@calendars, @pageNum)
     render "nextPage"
   end
@@ -49,7 +46,6 @@ class UsersController < ApplicationController
   def setCalendarVars(cals, page)
     resetVars()
     currentClass = 0
-    puts "Setting page to " + page.to_s
     cals[page].each do |c|
       c[1] = addTimeIfNecessary(c[1])
       c[2] = addTimeIfNecessary(c[2])
@@ -145,6 +141,8 @@ class UsersController < ApplicationController
 
   def getCalendars()
     classes = getAllClasses()
+    puts "All Classes"
+    p classes
     calendadrs = Array.new
     allClasses = splitClasses(classes)
     allCalendars = Array.new
