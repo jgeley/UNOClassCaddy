@@ -41,6 +41,7 @@ class UsersController < ApplicationController
     end
     session[:calendars] = getCalendars()
     @calendars = session[:calendars]
+    p @calendars
     setCalendarVars(@calendars, @pageNum)
     render "nextPage"
   end
