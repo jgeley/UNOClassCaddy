@@ -42760,3 +42760,462 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-26 22:21:24
 
 
 Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-11-26 22:21:24 -0600
+
+
+Started GET "/nextPage?myAction=6" for 127.0.0.1 at 2014-11-26 23:00:27 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#nextPage as HTML
+  Parameters: {"myAction"=>"6"}
+  [1m[35mActiveRecord::SessionStore::Session Load (1.0ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1
+  Rendered users/nextPage.html.erb within layouts/application (8665.1ms)
+Completed 200 OK in 9243ms (Views: 9222.7ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:37 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:38 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-11-26 23:00:38 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-26 23:00:52 -0600
+Processing by UsersController#index as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (0.0ms)[0m  [1mSELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1[0m
+  [1m[35mUnoClass Load (26.1ms)[0m  SELECT "uno_classes".* FROM "uno_classes"
+  Rendered users/index.html.erb within layouts/application (4926.7ms)
+Completed 200 OK in 5324ms (Views: 5294.9ms | ActiveRecord: 28.1ms)
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-11-26 23:00:58 -0600
+
+
+Started GET "/prefsPage" for 127.0.0.1 at 2014-11-26 23:01:01 -0600
+Processing by UsersController#prefsPage as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (1.0ms)[0m  [1mSELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1[0m
+  [1m[35mPreference Load (1.0ms)[0m  SELECT "preferences".* FROM "preferences"
+  Rendered users/prefsPage.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 444ms (Views: 441.4ms | ActiveRecord: 3.0ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+
+
+Started GET "/prefsPage" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+Processing by UsersController#prefsPage as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (1.0ms)[0m  [1mSELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1[0m
+  [1m[35mPreference Load (1.0ms)[0m  SELECT "preferences".* FROM "preferences"
+  Rendered users/prefsPage.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 435ms (Views: 433.4ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-11-26 23:01:02 -0600
+
+
+Started GET "/nextPage" for 127.0.0.1 at 2014-11-26 23:01:04 -0600
+Processing by UsersController#nextPage as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (1.0ms)[0m  [1mSELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1[0m
+  Rendered users/nextPage.html.erb within layouts/application (327.3ms)
+Completed 200 OK in 752ms (Views: 748.7ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (14.0ms)[0m  [1mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = 9[0m  [["data", "BAh7CEkiEF9jc3JmX3Rva2VuBjoGRUZJIjFtelUvcWRhNTFzdDZySHJXeUxW\nT2xsNUNCZVNJZThmME1FSjdleU9ibzU4PQY7AEZJIg1wYWdlX251bQY7AEZp\nBkkiDmNhbGVuZGFycwY7AEZbHVsPWwlJIg5DU0NJIDEyMDAGOwBUSSIIOTow\nBjsARkkiCjEwOjE1BjsARkkiDzIwMTgtMDEtMDIGOwBGWwlADUkiCDk6MAY7\nAEZJIgoxMDoxNQY7AEZJIg8yMDE4LTAxLTA0BjsARlsJSSIOQ1NDSSAyNTEw\nBjsAVEkiCjEwOjMwBjsARkkiCjExOjQ1BjsARkkiDzIwMTgtMDEtMDIGOwBG\nWwlAFkkiCjEwOjMwBjsARkkiCjExOjQ1BjsARkkiDzIwMTgtMDEtMDQGOwBG\nWwlJIg5DU0NJIDI4NTAGOwBUSSIJMTI6MAY7AEZJIgoxMzoxNQY7AEZJIg8y\nMDE4LTAxLTAyBjsARlsJQB9JIgkxMjowBjsARkkiCjEzOjE1BjsARkkiDzIw\nMTgtMDEtMDQGOwBGWwlJIg5DU0NJIDMxMDAGOwBUSSIJMTY6MAY7AEZJIgox\nNzoxNQY7AEZJIg8yMDE4LTAxLTAxBjsARlsJQChJIgkxNjowBjsARkkiCjE3\nOjE1BjsARkkiDzIwMTgtMDEtMDMGOwBGWwlJIg5DU0NJIDM2NjAGOwBUSSIK\nMTA6MzAGOwBGSSIKMTE6NDUGOwBGSSIPMjAxOC0wMS0wMgY7AEZbCUAxSSIK\nMTA6MzAGOwBGSSIKMTE6NDUGOwBGSSIPMjAxOC0wMS0wNAY7AEZbD0AMQBFA\nFUAaQB5AI0AnQCxbCUkiDkNTQ0kgMzY2MAY7AFRJIgoxMzozMAY7AEZJIgox\nNDo0NQY7AEZJIg8yMDE4LTAxLTAyBjsARlsJQDtJIgoxMzozMAY7AEZJIgox\nNDo0NQY7AEZJIg8yMDE4LTAxLTA0BjsARlsPQAxAEUAVQBpbCUkiDkNTQ0kg\nMjg1MAY7AFRJIgkxMjowBjsARkkiCjEzOjE1BjsARkkiDzIwMTgtMDEtMDIG\nOwBGWwlARUkiCTEyOjAGOwBGSSIKMTM6MTUGOwBGSSIPMjAxOC0wMS0wNAY7\nAEZAJ0AsQDBANVsPQAxAEUAVQBpAREBJQCdALEA6QD9bD0AMQBFbCUkiDkNT\nQ0kgMjUxMAY7AFRJIgoxMDozMAY7AEZJIgoxMTo0NQY7AEZJIg8yMDE4LTAx\nLTAyBjsARlsJQFBJIgoxMDozMAY7AEZJIgoxMTo0NQY7AEZJIg8yMDE4LTAx\nLTA0BjsARkAeQCNAJ0AsQDBANVsPQAxAEUBPQFRAHkAjQCdALEA6QD9bD0AM\nQBFAT0BUQERASUAnQCxAMEA1Ww9ADEARQE9AVEBEQElAJ0AsQDpAP1sOWwlJ\nIg5DU0NJIDEyMDAGOwBUSSIJOTowMAY7AFRJIgoxMTo0NQY7AFRJIg8yMDE4\nLTAxLTA1BjsARkAVQBpAHkAjQCdALEAwQDVbDkBcQBVAGkAeQCNAJ0AsQDpA\nP1sOQFxAFUAaQERASUAnQCxAMEA1Ww5AXEAVQBpAREBJQCdALEA6QD9bDkBc\nQE9AVEAeQCNAJ0AsQDBANVsOQFxAT0BUQB5AI0AnQCxAOkA/Ww5AXEBPQFRA\nREBJQCdALEAwQDVbDkBcQE9AVEBEQElAJ0AsQDpAP1sOWwlJIg5DU0NJIDEy\nMDAGOwBUSSIJOTowMAY7AFRJIgoxMTo0NQY7AFRJIg8yMDE4LTAxLTA1BjsA\nRkAVQBpAHkAjQCdALEAwQDVbDkBpQBVAGkAeQCNAJ0AsQDpAP1sOQGlAFUAa\nQERASUAnQCxAMEA1Ww5AaUAVQBpAREBJQCdALEA6QD9bDkBpQE9AVEAeQCNA\nJ0AsQDBANVsOQGlAT0BUQB5AI0AnQCxAOkA/Ww5AaUBPQFRAREBJQCdALEAw\nQDVbDkBpQE9AVEBEQElAJ0AsQDpAPw==\n"], ["updated_at", Thu, 27 Nov 2014 05:01:05 UTC +00:00]]
+  [1m[35m (186.2ms)[0m  commit transaction
+
+
+Started GET "/nextPage" for 127.0.0.1 at 2014-11-26 23:01:05 -0600
+Processing by UsersController#nextPage as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (0.0ms)[0m  [1mSELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1[0m
+  Rendered users/nextPage.html.erb within layouts/application (352.3ms)
+Completed 200 OK in 865ms (Views: 861.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:06 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:07 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:07 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-26 23:01:07 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-11-26 23:01:07 -0600
+
+
+Started GET "/nextPage?myAction=2" for 127.0.0.1 at 2014-11-26 23:02:14 -0600
+Processing by UsersController#nextPage as HTML
+  Parameters: {"myAction"=>"2"}
+  [1m[35mActiveRecord::SessionStore::Session Load (1.0ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1
+  Rendered users/nextPage.html.erb within layouts/application (338.3ms)
+Completed 200 OK in 778ms (Views: 772.7ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = 9  [["data", "BAh7CEkiEF9jc3JmX3Rva2VuBjoGRUZJIjFtelUvcWRhNTFzdDZySHJXeUxW\nT2xsNUNCZVNJZThmME1FSjdleU9ibzU4PQY7AEZJIg1wYWdlX251bQY7AEZp\nB0kiDmNhbGVuZGFycwY7AEZbHVsPWwlJIg5DU0NJIDEyMDAGOwBUSSIIOTow\nBjsARkkiCjEwOjE1BjsARkkiDzIwMTgtMDEtMDIGOwBGWwlADUkiCDk6MAY7\nAEZJIgoxMDoxNQY7AEZJIg8yMDE4LTAxLTA0BjsARlsJSSIOQ1NDSSAyNTEw\nBjsAVEkiCjEwOjMwBjsARkkiCjExOjQ1BjsARkkiDzIwMTgtMDEtMDIGOwBG\nWwlAFkkiCjEwOjMwBjsARkkiCjExOjQ1BjsARkkiDzIwMTgtMDEtMDQGOwBG\nWwlJIg5DU0NJIDI4NTAGOwBUSSIJMTI6MAY7AEZJIgoxMzoxNQY7AEZJIg8y\nMDE4LTAxLTAyBjsARlsJQB9JIgkxMjowBjsARkkiCjEzOjE1BjsARkkiDzIw\nMTgtMDEtMDQGOwBGWwlJIg5DU0NJIDMxMDAGOwBUSSIJMTY6MAY7AEZJIgox\nNzoxNQY7AEZJIg8yMDE4LTAxLTAxBjsARlsJQChJIgkxNjowBjsARkkiCjE3\nOjE1BjsARkkiDzIwMTgtMDEtMDMGOwBGWwlJIg5DU0NJIDM2NjAGOwBUSSIK\nMTA6MzAGOwBGSSIKMTE6NDUGOwBGSSIPMjAxOC0wMS0wMgY7AEZbCUAxSSIK\nMTA6MzAGOwBGSSIKMTE6NDUGOwBGSSIPMjAxOC0wMS0wNAY7AEZbD0AMQBFA\nFUAaQB5AI0AnQCxbCUkiDkNTQ0kgMzY2MAY7AFRJIgoxMzozMAY7AEZJIgox\nNDo0NQY7AEZJIg8yMDE4LTAxLTAyBjsARlsJQDtJIgoxMzozMAY7AEZJIgox\nNDo0NQY7AEZJIg8yMDE4LTAxLTA0BjsARlsPQAxAEUAVQBpbCUkiDkNTQ0kg\nMjg1MAY7AFRJIgkxMjowBjsARkkiCjEzOjE1BjsARkkiDzIwMTgtMDEtMDIG\nOwBGWwlARUkiCTEyOjAGOwBGSSIKMTM6MTUGOwBGSSIPMjAxOC0wMS0wNAY7\nAEZAJ0AsQDBANVsPQAxAEUAVQBpAREBJQCdALEA6QD9bD0AMQBFbCUkiDkNT\nQ0kgMjUxMAY7AFRJIgoxMDozMAY7AEZJIgoxMTo0NQY7AEZJIg8yMDE4LTAx\nLTAyBjsARlsJQFBJIgoxMDozMAY7AEZJIgoxMTo0NQY7AEZJIg8yMDE4LTAx\nLTA0BjsARkAeQCNAJ0AsQDBANVsPQAxAEUBPQFRAHkAjQCdALEA6QD9bD0AM\nQBFAT0BUQERASUAnQCxAMEA1Ww9ADEARQE9AVEBEQElAJ0AsQDpAP1sOWwlJ\nIg5DU0NJIDEyMDAGOwBUSSIJOTowMAY7AFRJIgoxMTo0NQY7AFRJIg8yMDE4\nLTAxLTA1BjsARkAVQBpAHkAjQCdALEAwQDVbDkBcQBVAGkAeQCNAJ0AsQDpA\nP1sOQFxAFUAaQERASUAnQCxAMEA1Ww5AXEAVQBpAREBJQCdALEA6QD9bDkBc\nQE9AVEAeQCNAJ0AsQDBANVsOQFxAT0BUQB5AI0AnQCxAOkA/Ww5AXEBPQFRA\nREBJQCdALEAwQDVbDkBcQE9AVEBEQElAJ0AsQDpAP1sOWwlJIg5DU0NJIDEy\nMDAGOwBUSSIJOTowMAY7AFRJIgoxMTo0NQY7AFRJIg8yMDE4LTAxLTA1BjsA\nRkAVQBpAHkAjQCdALEAwQDVbDkBpQBVAGkAeQCNAJ0AsQDpAP1sOQGlAFUAa\nQERASUAnQCxAMEA1Ww5AaUAVQBpAREBJQCdALEA6QD9bDkBpQE9AVEAeQCNA\nJ0AsQDBANVsOQGlAT0BUQB5AI0AnQCxAOkA/Ww5AaUBPQFRAREBJQCdALEAw\nQDVbDkBpQE9AVEBEQElAJ0AsQDpAPw==\n"], ["updated_at", Thu, 27 Nov 2014 05:02:15 UTC +00:00]]
+  [1m[36m (147.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/nextPage?myAction=2" for 127.0.0.1 at 2014-11-26 23:02:15 -0600
+Processing by UsersController#nextPage as HTML
+  Parameters: {"myAction"=>"2"}
+  [1m[35mActiveRecord::SessionStore::Session Load (1.0ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1
+  Rendered users/nextPage.html.erb within layouts/application (329.3ms)
+Completed 200 OK in 758ms (Views: 754.7ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:16 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:17 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-11-26 23:02:17 -0600
+
+
+Started GET "/nextPage?myAction=3" for 127.0.0.1 at 2014-11-26 23:02:18 -0600
+Processing by UsersController#nextPage as HTML
+  Parameters: {"myAction"=>"3"}
+  [1m[36mActiveRecord::SessionStore::Session Load (1.0ms)[0m  [1mSELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1[0m
+  Rendered users/nextPage.html.erb within layouts/application (378.4ms)
+Completed 200 OK in 865ms (Views: 862.8ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = 9[0m  [["data", "BAh7CEkiEF9jc3JmX3Rva2VuBjoGRUZJIjFtelUvcWRhNTFzdDZySHJXeUxW\nT2xsNUNCZVNJZThmME1FSjdleU9ibzU4PQY7AEZJIg1wYWdlX251bQY7AEZp\nCEkiDmNhbGVuZGFycwY7AEZbHVsPWwlJIg5DU0NJIDEyMDAGOwBUSSIIOTow\nBjsARkkiCjEwOjE1BjsARkkiDzIwMTgtMDEtMDIGOwBGWwlADUkiCDk6MAY7\nAEZJIgoxMDoxNQY7AEZJIg8yMDE4LTAxLTA0BjsARlsJSSIOQ1NDSSAyNTEw\nBjsAVEkiCjEwOjMwBjsARkkiCjExOjQ1BjsARkkiDzIwMTgtMDEtMDIGOwBG\nWwlAFkkiCjEwOjMwBjsARkkiCjExOjQ1BjsARkkiDzIwMTgtMDEtMDQGOwBG\nWwlJIg5DU0NJIDI4NTAGOwBUSSIJMTI6MAY7AEZJIgoxMzoxNQY7AEZJIg8y\nMDE4LTAxLTAyBjsARlsJQB9JIgkxMjowBjsARkkiCjEzOjE1BjsARkkiDzIw\nMTgtMDEtMDQGOwBGWwlJIg5DU0NJIDMxMDAGOwBUSSIJMTY6MAY7AEZJIgox\nNzoxNQY7AEZJIg8yMDE4LTAxLTAxBjsARlsJQChJIgkxNjowBjsARkkiCjE3\nOjE1BjsARkkiDzIwMTgtMDEtMDMGOwBGWwlJIg5DU0NJIDM2NjAGOwBUSSIK\nMTA6MzAGOwBGSSIKMTE6NDUGOwBGSSIPMjAxOC0wMS0wMgY7AEZbCUAxSSIK\nMTA6MzAGOwBGSSIKMTE6NDUGOwBGSSIPMjAxOC0wMS0wNAY7AEZbD0AMQBFA\nFUAaQB5AI0AnQCxbCUkiDkNTQ0kgMzY2MAY7AFRJIgoxMzozMAY7AEZJIgox\nNDo0NQY7AEZJIg8yMDE4LTAxLTAyBjsARlsJQDtJIgoxMzozMAY7AEZJIgox\nNDo0NQY7AEZJIg8yMDE4LTAxLTA0BjsARlsPQAxAEUAVQBpbCUkiDkNTQ0kg\nMjg1MAY7AFRJIgkxMjowBjsARkkiCjEzOjE1BjsARkkiDzIwMTgtMDEtMDIG\nOwBGWwlARUkiCTEyOjAGOwBGSSIKMTM6MTUGOwBGSSIPMjAxOC0wMS0wNAY7\nAEZAJ0AsQDBANVsPQAxAEUAVQBpAREBJQCdALEA6QD9bD0AMQBFbCUkiDkNT\nQ0kgMjUxMAY7AFRJIgoxMDozMAY7AEZJIgoxMTo0NQY7AEZJIg8yMDE4LTAx\nLTAyBjsARlsJQFBJIgoxMDozMAY7AEZJIgoxMTo0NQY7AEZJIg8yMDE4LTAx\nLTA0BjsARkAeQCNAJ0AsQDBANVsPQAxAEUBPQFRAHkAjQCdALEA6QD9bD0AM\nQBFAT0BUQERASUAnQCxAMEA1Ww9ADEARQE9AVEBEQElAJ0AsQDpAP1sOWwlJ\nIg5DU0NJIDEyMDAGOwBUSSIJOTowMAY7AFRJIgoxMTo0NQY7AFRJIg8yMDE4\nLTAxLTA1BjsARkAVQBpAHkAjQCdALEAwQDVbDkBcQBVAGkAeQCNAJ0AsQDpA\nP1sOQFxAFUAaQERASUAnQCxAMEA1Ww5AXEAVQBpAREBJQCdALEA6QD9bDkBc\nQE9AVEAeQCNAJ0AsQDBANVsOQFxAT0BUQB5AI0AnQCxAOkA/Ww5AXEBPQFRA\nREBJQCdALEAwQDVbDkBcQE9AVEBEQElAJ0AsQDpAP1sOWwlJIg5DU0NJIDEy\nMDAGOwBUSSIJOTowMAY7AFRJIgoxMTo0NQY7AFRJIg8yMDE4LTAxLTA1BjsA\nRkAVQBpAHkAjQCdALEAwQDVbDkBpQBVAGkAeQCNAJ0AsQDpAP1sOQGlAFUAa\nQERASUAnQCxAMEA1Ww5AaUAVQBpAREBJQCdALEA6QD9bDkBpQE9AVEAeQCNA\nJ0AsQDBANVsOQGlAT0BUQB5AI0AnQCxAOkA/Ww5AaUBPQFRAREBJQCdALEAw\nQDVbDkBpQE9AVEBEQElAJ0AsQDpAPw==\n"], ["updated_at", Thu, 27 Nov 2014 05:02:19 UTC +00:00]]
+  [1m[35m (111.1ms)[0m  commit transaction
+
+
+Started GET "/nextPage?myAction=3" for 127.0.0.1 at 2014-11-26 23:02:19 -0600
+Processing by UsersController#nextPage as HTML
+  Parameters: {"myAction"=>"3"}
+  [1m[36mActiveRecord::SessionStore::Session Load (1.0ms)[0m  [1mSELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1[0m
+  Rendered users/nextPage.html.erb within layouts/application (348.4ms)
+Completed 200 OK in 857ms (Views: 853.8ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-11-26 23:02:21 -0600
+
+
+Started GET "/nextPage?myAction=4" for 127.0.0.1 at 2014-11-26 23:02:22 -0600
+Processing by UsersController#nextPage as HTML
+  Parameters: {"myAction"=>"4"}
+  [1m[35mActiveRecord::SessionStore::Session Load (1.0ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1
+  Rendered users/nextPage.html.erb within layouts/application (326.3ms)
+Completed 200 OK in 817ms (Views: 812.8ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = 9  [["data", "BAh7CEkiEF9jc3JmX3Rva2VuBjoGRUZJIjFtelUvcWRhNTFzdDZySHJXeUxW\nT2xsNUNCZVNJZThmME1FSjdleU9ibzU4PQY7AEZJIg1wYWdlX251bQY7AEZp\nCUkiDmNhbGVuZGFycwY7AEZbHVsPWwlJIg5DU0NJIDEyMDAGOwBUSSIIOTow\nBjsARkkiCjEwOjE1BjsARkkiDzIwMTgtMDEtMDIGOwBGWwlADUkiCDk6MAY7\nAEZJIgoxMDoxNQY7AEZJIg8yMDE4LTAxLTA0BjsARlsJSSIOQ1NDSSAyNTEw\nBjsAVEkiCjEwOjMwBjsARkkiCjExOjQ1BjsARkkiDzIwMTgtMDEtMDIGOwBG\nWwlAFkkiCjEwOjMwBjsARkkiCjExOjQ1BjsARkkiDzIwMTgtMDEtMDQGOwBG\nWwlJIg5DU0NJIDI4NTAGOwBUSSIJMTI6MAY7AEZJIgoxMzoxNQY7AEZJIg8y\nMDE4LTAxLTAyBjsARlsJQB9JIgkxMjowBjsARkkiCjEzOjE1BjsARkkiDzIw\nMTgtMDEtMDQGOwBGWwlJIg5DU0NJIDMxMDAGOwBUSSIJMTY6MAY7AEZJIgox\nNzoxNQY7AEZJIg8yMDE4LTAxLTAxBjsARlsJQChJIgkxNjowBjsARkkiCjE3\nOjE1BjsARkkiDzIwMTgtMDEtMDMGOwBGWwlJIg5DU0NJIDM2NjAGOwBUSSIK\nMTA6MzAGOwBGSSIKMTE6NDUGOwBGSSIPMjAxOC0wMS0wMgY7AEZbCUAxSSIK\nMTA6MzAGOwBGSSIKMTE6NDUGOwBGSSIPMjAxOC0wMS0wNAY7AEZbD0AMQBFA\nFUAaQB5AI0AnQCxbCUkiDkNTQ0kgMzY2MAY7AFRJIgoxMzozMAY7AEZJIgox\nNDo0NQY7AEZJIg8yMDE4LTAxLTAyBjsARlsJQDtJIgoxMzozMAY7AEZJIgox\nNDo0NQY7AEZJIg8yMDE4LTAxLTA0BjsARlsPQAxAEUAVQBpbCUkiDkNTQ0kg\nMjg1MAY7AFRJIgkxMjowBjsARkkiCjEzOjE1BjsARkkiDzIwMTgtMDEtMDIG\nOwBGWwlARUkiCTEyOjAGOwBGSSIKMTM6MTUGOwBGSSIPMjAxOC0wMS0wNAY7\nAEZAJ0AsQDBANVsPQAxAEUAVQBpAREBJQCdALEA6QD9bD0AMQBFbCUkiDkNT\nQ0kgMjUxMAY7AFRJIgoxMDozMAY7AEZJIgoxMTo0NQY7AEZJIg8yMDE4LTAx\nLTAyBjsARlsJQFBJIgoxMDozMAY7AEZJIgoxMTo0NQY7AEZJIg8yMDE4LTAx\nLTA0BjsARkAeQCNAJ0AsQDBANVsPQAxAEUBPQFRAHkAjQCdALEA6QD9bD0AM\nQBFAT0BUQERASUAnQCxAMEA1Ww9ADEARQE9AVEBEQElAJ0AsQDpAP1sOWwlJ\nIg5DU0NJIDEyMDAGOwBUSSIJOTowMAY7AFRJIgoxMTo0NQY7AFRJIg8yMDE4\nLTAxLTA1BjsARkAVQBpAHkAjQCdALEAwQDVbDkBcQBVAGkAeQCNAJ0AsQDpA\nP1sOQFxAFUAaQERASUAnQCxAMEA1Ww5AXEAVQBpAREBJQCdALEA6QD9bDkBc\nQE9AVEAeQCNAJ0AsQDBANVsOQFxAT0BUQB5AI0AnQCxAOkA/Ww5AXEBPQFRA\nREBJQCdALEAwQDVbDkBcQE9AVEBEQElAJ0AsQDpAP1sOWwlJIg5DU0NJIDEy\nMDAGOwBUSSIJOTowMAY7AFRJIgoxMTo0NQY7AFRJIg8yMDE4LTAxLTA1BjsA\nRkAVQBpAHkAjQCdALEAwQDVbDkBpQBVAGkAeQCNAJ0AsQDpAP1sOQGlAFUAa\nQERASUAnQCxAMEA1Ww5AaUAVQBpAREBJQCdALEA6QD9bDkBpQE9AVEAeQCNA\nJ0AsQDBANVsOQGlAT0BUQB5AI0AnQCxAOkA/Ww5AaUBPQFRAREBJQCdALEAw\nQDVbDkBpQE9AVEBEQElAJ0AsQDpAPw==\n"], ["updated_at", Thu, 27 Nov 2014 05:02:23 UTC +00:00]]
+  [1m[36m (131.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/nextPage?myAction=4" for 127.0.0.1 at 2014-11-26 23:02:23 -0600
+Processing by UsersController#nextPage as HTML
+  Parameters: {"myAction"=>"4"}
+  [1m[35mActiveRecord::SessionStore::Session Load (0.0ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '119820699e41781b9d7ea843416c7b22' ORDER BY "sessions"."id" ASC LIMIT 1
+  Rendered users/nextPage.html.erb within layouts/application (331.3ms)
+Completed 200 OK in 767ms (Views: 764.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-11-26 23:02:24 -0600
