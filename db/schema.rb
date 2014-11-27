@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111055803) do
+ActiveRecord::Schema.define(version: 20141126173755) do
 
   create_table "preferences", force: true do |t|
     t.integer  "kind"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141111055803) do
     t.string   "sessionid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "day"
   end
 
   create_table "sessions", force: true do |t|
