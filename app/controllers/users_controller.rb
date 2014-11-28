@@ -6,13 +6,10 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @pageNum = 0
+    session[:activate] = 1
     #@users = User.all
     myList = [["A",1],["B"],2]
     @classList = myList
-    render "index.html.erb"
-  end
-
-  def Renderindex
     render "index.html.erb"
   end
 
@@ -22,7 +19,20 @@ class UsersController < ApplicationController
   end
 
   def prefsPage
-    render "prefsPage"
+    total = 0
+    UnoClass.all.each do |uno_class|
+      if uno_class.sessionId.to_s == request.session_options[:id].to_s
+      total = total + 1
+      end
+    end
+    if total == 0
+      puts "TOTAL: " + total.to_s
+      @notice = "You must enter at least one class"
+      render "index.html.erb"
+    else
+      render "prefsPage"
+    end
+  #render "prefsPage"
   end
 
   def nextPage
@@ -41,7 +51,7 @@ class UsersController < ApplicationController
     setCalendarVars(@calendars, @pageNum)
     render "nextPage"
   end
-  
+
   def setCalendarVars(cals, page)
     resetVars()
     currentClass = 0
@@ -92,19 +102,19 @@ class UsersController < ApplicationController
       currentClass = currentClass + 1
     end
   end
-  
+
   def addTimeIfNecessary(time)
     timedata = time.match(/(\d+):(\d+)/)
     timedata.captures
     hour = timedata[1].to_i
     minuite = timedata[2].to_i
     if hour < 8
-      hour = hour + 12
+    hour = hour + 12
     end
     ret = hour.to_s + ":" + minuite.to_s
     ret
   end
-  
+
   def resetVars()
     @title1 = nil
     @end1 = nil
@@ -145,14 +155,14 @@ class UsersController < ApplicationController
     allClasses = splitClasses(classes)
     allCalendars = Array.new
     getCalendarsRecursive(allClasses, Array.new, allCalendars)
-    #printArrayRec(allCalendars, 0)
+  #printArrayRec(allCalendars, 0)
   end
 
   def getCalendarsRecursive(classes, currentCalendar, allCalendars)
     # puts "All calendars"
     # p allCalendars
     if classes.length == 0
-      return allCalendars
+    return allCalendars
     end
     classes[0].each do |section|
       sectionLength = section.length
@@ -162,7 +172,7 @@ class UsersController < ApplicationController
       if(classes.length == 1)
         #@allTheseCalendars = allCalendars
         copy = Array.new(currentCalendar)
-        allCalendars.push(copy)
+      allCalendars.push(copy)
       else
         newArray = getCalendarsRecursive(classes[1..-1], currentCalendar, allCalendars)
       end
@@ -184,50 +194,50 @@ class UsersController < ApplicationController
           if(newDate.wday == 1)
             if c[3].include? "M"
               thisClass = Array.new
-              thisClass.push(c[0])
-              thisClass.push(c[1])
-              thisClass.push(c[2])
-              thisClass.push(newDate.to_s)
+            thisClass.push(c[0])
+            thisClass.push(c[1])
+            thisClass.push(c[2])
+            thisClass.push(newDate.to_s)
             individualClassGroup.push(thisClass)
             end
           end
           if(newDate.wday == 2)
             if c[3].include? "T"
               thisClass = Array.new
-              thisClass.push(c[0])
-              thisClass.push(c[1])
-              thisClass.push(c[2])
-              thisClass.push(newDate.to_s)
+            thisClass.push(c[0])
+            thisClass.push(c[1])
+            thisClass.push(c[2])
+            thisClass.push(newDate.to_s)
             individualClassGroup.push(thisClass)
             end
           end
           if(newDate.wday == 3)
             if c[3].include? "W"
               thisClass = Array.new
-              thisClass.push(c[0])
-              thisClass.push(c[1])
-              thisClass.push(c[2])
-              thisClass.push(newDate.to_s)
+            thisClass.push(c[0])
+            thisClass.push(c[1])
+            thisClass.push(c[2])
+            thisClass.push(newDate.to_s)
             individualClassGroup.push(thisClass)
             end
           end
           if(newDate.wday == 4)
             if c[3].include? "R"
               thisClass = Array.new
-              thisClass.push(c[0])
-              thisClass.push(c[1])
-              thisClass.push(c[2])
-              thisClass.push(newDate.to_s)
+            thisClass.push(c[0])
+            thisClass.push(c[1])
+            thisClass.push(c[2])
+            thisClass.push(newDate.to_s)
             individualClassGroup.push(thisClass)
             end
           end
           if(newDate.wday == 5)
             if c[3].include? "F"
               thisClass = Array.new
-              thisClass.push(c[0])
-              thisClass.push(c[1])
-              thisClass.push(c[2])
-              thisClass.push(newDate.to_s)
+            thisClass.push(c[0])
+            thisClass.push(c[1])
+            thisClass.push(c[2])
+            thisClass.push(newDate.to_s)
             individualClassGroup.push(thisClass)
             end
           end
