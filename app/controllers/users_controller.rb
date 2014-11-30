@@ -53,6 +53,7 @@ class UsersController < ApplicationController
   end
 
   def setCalendarVars(cals, page)
+    page = page - 1
     resetVars()
     currentClass = 0
     cals[page].each do |c|
