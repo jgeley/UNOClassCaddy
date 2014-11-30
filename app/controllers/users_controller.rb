@@ -59,43 +59,43 @@ class UsersController < ApplicationController
       c[1] = addTimeIfNecessary(c[1])
       c[2] = addTimeIfNecessary(c[2])
       if(currentClass == 0)
-        @title1 = c[0]
+        @title1 = c[0] + " " + c[4]
         @start1 = c[3].to_s + " " + c[1] + ":00"
         @end1 = c[3].to_s + " " + c[2] + ":00"
       elsif currentClass == 1
-        @title2 = c[0]
+        @title2 = c[0] + " " + c[4]
         @start2 = c[3].to_s + " " + c[1] + ":00"
         @end2 = c[3].to_s + " " + c[2] + ":00"
       elsif currentClass == 2
-        @title3 = c[0]
+        @title3 = c[0] + " " + c[4]
         @start3 = c[3].to_s + " " + c[1] + ":00"
         @end3 = c[3].to_s + " " + c[2] + ":00"
       elsif currentClass == 3
-        @title4 = c[0]
+        @title4 = c[0] + " " + c[4]
         @start4 = c[3].to_s + " " + c[1] + ":00"
         @end4 = c[3].to_s + " " + c[2] + ":00"
       elsif currentClass == 4
-        @title5 = c[0]
+        @title5 = c[0] + " " + c[4]
         @start5 = c[3].to_s + " " + c[1] + ":00"
         @end5 = c[3].to_s + " " + c[2] + ":00"
       elsif currentClass == 5
-        @title6 = c[0]
+        @title6 = c[0] + " " + c[4]
         @start6 = c[3].to_s + " " + c[1] + ":00"
         @end6 = c[3].to_s + " " + c[2] + ":00"
       elsif currentClass == 6
-        @title7 = c[0]
+        @title7 = c[0]  + " " + c[4]
         @start7 = c[3].to_s + " " + c[1] + ":00"
         @end7 = c[3].to_s + " " + c[2] + ":00"
       elsif currentClass == 7
-        @title8 = c[0]
+        @title8 = c[0] + " " + c[4]
         @start8 = c[3].to_s + " " + c[1] + ":00"
         @end8 = c[3].to_s + " " + c[2] + ":00"
       elsif currentClass == 8
-        @title9 = c[0]
+        @title9 = c[0] + " " + c[4]
         @start9 = c[3].to_s + " " + c[1] + ":00"
         @end9 = c[3].to_s + " " + c[2] + ":00"
       elsif currentClass == 9
-        @title10 = c[0]
+        @title10 = c[0] + " " + c[4]
         @start10 = c[3].to_s + " " + c[1] + ":00"
         @end10 = c[3].to_s + " " + c[2] + ":00"
       end
@@ -198,6 +198,7 @@ class UsersController < ApplicationController
             thisClass.push(c[1])
             thisClass.push(c[2])
             thisClass.push(newDate.to_s)
+            thisClass.push(c[4])
             individualClassGroup.push(thisClass)
             end
           end
@@ -208,6 +209,7 @@ class UsersController < ApplicationController
             thisClass.push(c[1])
             thisClass.push(c[2])
             thisClass.push(newDate.to_s)
+            thisClass.push(c[4])
             individualClassGroup.push(thisClass)
             end
           end
@@ -218,6 +220,7 @@ class UsersController < ApplicationController
             thisClass.push(c[1])
             thisClass.push(c[2])
             thisClass.push(newDate.to_s)
+            thisClass.push(c[4])
             individualClassGroup.push(thisClass)
             end
           end
@@ -228,6 +231,7 @@ class UsersController < ApplicationController
             thisClass.push(c[1])
             thisClass.push(c[2])
             thisClass.push(newDate.to_s)
+            thisClass.push(c[4])
             individualClassGroup.push(thisClass)
             end
           end
@@ -238,6 +242,7 @@ class UsersController < ApplicationController
             thisClass.push(c[1])
             thisClass.push(c[2])
             thisClass.push(newDate.to_s)
+            thisClass.push(c[4])
             individualClassGroup.push(thisClass)
             end
           end
@@ -271,7 +276,16 @@ class UsersController < ApplicationController
       days = ""
       location = ""
       individualClass = Array.new
+      sectionList = Array.new
       individualClass.push(classDep + " " + classNumber)
+      doc.search('//th').each do |tr|
+        str = tr.content
+        if(str.include? "Section")
+          puts "added " + str + " to section list"
+          sectionList.push(str)
+        end
+      end
+      currentSection = 0
       doc.search('//table/tr/td/table/tr').each do |tr|
         str = tr.content
         if(str.include? "Time")
@@ -296,6 +310,8 @@ class UsersController < ApplicationController
           individualClass.push(days)
           time = ""
           days = ""
+          individualClass.push(sectionList[currentSection])
+          currentSection = currentSection + 1
           classList.push(individualClass)
           individualClass = Array.new
           individualClass.push(classDep + " " + classNumber)
