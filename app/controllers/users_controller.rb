@@ -47,6 +47,7 @@ class UsersController < ApplicationController
     if(session[:calendars] == nil)
       session[:calendars] = getCalendars()
     end
+    session[:calendars] = getCalendars()
     @calendars = session[:calendars]
     setCalendarVars(@calendars, @pageNum)
     render "nextPage"
@@ -57,48 +58,72 @@ class UsersController < ApplicationController
     resetVars()
     currentClass = 0
     cals[page].each do |c|
-      c[1] = addTimeIfNecessary(c[1])
-      c[2] = addTimeIfNecessary(c[2])
+      startDate = ""
+      endDate = ""
+      if(c[1] != "TBA")
+        c[1] = addTimeIfNecessary(c[1])
+        c[2] = addTimeIfNecessary(c[2])
+        startDate = c[3]
+        endDate = c[3]
+        allDay = false
+      else
+        c[1] = "12:00"
+        c[2] = "12:00"
+        startDate = "2001-1-1"
+        endDate = "2099-1-1"
+        allDay = true
+        c[4] = c[4] + " - Online"
+      end
       if(currentClass == 0)
         @title1 = c[0] + " " + c[4]
-        @start1 = c[3].to_s + " " + c[1] + ":00"
-        @end1 = c[3].to_s + " " + c[2] + ":00"
+        @start1 = startDate + " " + c[1] + ":00"
+        @end1 = endDate + " " + c[2] + ":00"
+        @allDay1 = allDay
       elsif currentClass == 1
         @title2 = c[0] + " " + c[4]
-        @start2 = c[3].to_s + " " + c[1] + ":00"
-        @end2 = c[3].to_s + " " + c[2] + ":00"
+        @start2 = startDate + " " + c[1] + ":00"
+        @end2 = endDate + " " + c[2] + ":00"
+        @allDay2 = allDay
       elsif currentClass == 2
         @title3 = c[0] + " " + c[4]
-        @start3 = c[3].to_s + " " + c[1] + ":00"
-        @end3 = c[3].to_s + " " + c[2] + ":00"
+        @start3 = startDate + " " + c[1] + ":00"
+        @end3 = endDate + " " + c[2] + ":00"
+        @allDay3 = allDay
       elsif currentClass == 3
         @title4 = c[0] + " " + c[4]
-        @start4 = c[3].to_s + " " + c[1] + ":00"
-        @end4 = c[3].to_s + " " + c[2] + ":00"
+        @start4 = startDate + " " + c[1] + ":00"
+        @end4 = endDate + " " + c[2] + ":00"
+        @allDay4 = allDay
       elsif currentClass == 4
         @title5 = c[0] + " " + c[4]
-        @start5 = c[3].to_s + " " + c[1] + ":00"
-        @end5 = c[3].to_s + " " + c[2] + ":00"
+        @start5 = startDate + " " + c[1] + ":00"
+        @end5 = endDate + " " + c[2] + ":00"
+        @allDay5 = allDay
       elsif currentClass == 5
         @title6 = c[0] + " " + c[4]
-        @start6 = c[3].to_s + " " + c[1] + ":00"
-        @end6 = c[3].to_s + " " + c[2] + ":00"
+        @start6 = startDate + " " + c[1] + ":00"
+        @end6 = endDate + " " + c[2] + ":00"
+        @allDay6 = allDay
       elsif currentClass == 6
         @title7 = c[0]  + " " + c[4]
-        @start7 = c[3].to_s + " " + c[1] + ":00"
-        @end7 = c[3].to_s + " " + c[2] + ":00"
+        @start7 = startDate + " " + c[1] + ":00"
+        @end7 = endDate + " " + c[2] + ":00"
+        @allDay7 = allDay
       elsif currentClass == 7
         @title8 = c[0] + " " + c[4]
-        @start8 = c[3].to_s + " " + c[1] + ":00"
-        @end8 = c[3].to_s + " " + c[2] + ":00"
+        @start8 = startDate + " " + c[1] + ":00"
+        @end8 = endDate + " " + c[2] + ":00"
+        @allDay8 = allDay
       elsif currentClass == 8
         @title9 = c[0] + " " + c[4]
-        @start9 = c[3].to_s + " " + c[1] + ":00"
-        @end9 = c[3].to_s + " " + c[2] + ":00"
+        @start9 = startDate + " " + c[1] + ":00"
+        @end9 = endDate + " " + c[2] + ":00"
+        @allDay9 = allDay
       elsif currentClass == 9
         @title10 = c[0] + " " + c[4]
-        @start10 = c[3].to_s + " " + c[1] + ":00"
-        @end10 = c[3].to_s + " " + c[2] + ":00"
+        @start10 = startDate + " " + c[1] + ":00"
+        @end10 = endDate + " " + c[2] + ":00"
+        @allDay10 = allDay
       end
       currentClass = currentClass + 1
     end
@@ -151,9 +176,11 @@ class UsersController < ApplicationController
 
   def getCalendars()
     classes = getAllClasses()
+    p classes
     puts "All Classes"
     calendadrs = Array.new
     allClasses = splitClasses(classes)
+    p allClasses
     allCalendars = Array.new
     getCalendarsRecursive(allClasses, Array.new, allCalendars)
   #printArrayRec(allCalendars, 0)
