@@ -37,6 +37,9 @@ Section : <%= f.text_area :section %>
 <%= f.submit %>
 <% end %>
 <br />
+
+<!-- Put the table of selected classes into a div for styling -->
+<div id="selectedlist">
 <table>
 	<thead>
 		<tr>
@@ -60,12 +63,14 @@ Section : <%= f.text_area :section %>
 		<% end %>
 	</tbody>
 </table>
+</div>
+
 <br />
-<%= link_to "Continue", :controller => :users, :action => :prefsPage%> 
+<a href="prefsPage"><input type="button" value="Continue" /></a>
 <br /><%= @notice %>
 </section>
 <!-- Creation information is included in this footer.-->
-<footer>Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
+<footer style="margin-top: 15%;">Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
 
 </html>
 

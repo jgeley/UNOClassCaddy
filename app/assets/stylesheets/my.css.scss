@@ -21,7 +21,7 @@ header p {
 	
 	display: inline;
 	
-	vertical-align: top;
+	vertical-align: middle;
 	
 	margin-left: 5%;
 
@@ -57,19 +57,26 @@ input[value="Add Selected"] {
 
 /*Set attributes of buttons on calendars page*/
 input[value="Edit Classes"], input[value="Edit Preferences"] {
-	width: 170px;
+	width: 150px;
 	height: 70px;
-	
-	float: left;
-}
-
-
-input[value="Go Back"] {
-	margin-top: 20%;
 }
 
 input[value="See Schedules"] {
-	margin-left: 81%;
+	margin-left: 385%;
+}
+
+#prefButtons {
+	margin-top: 5%;
+
+}
+
+#calButtons {
+	float: left;
+	margin-top: -57%;
+}
+
+#calHeading {
+	margin-left: 25%;
 }
 
 #main {
@@ -93,7 +100,7 @@ input[value="See Schedules"] {
 	font: 100% "Footlight MT Light", serif;
 }
 
-ul {
+#selectedlist {
 	float: right;
 	margin-top: -5%;
 	margin-right: 5%;
@@ -106,7 +113,12 @@ ul {
 }
 
 #calendar {
-	width: 1200px;
+	
+	/*center the calendar*/
+	margin-left: auto;
+	margin-right: auto;
+	
+	width: 800px;
 	height: 650px;
 }
 

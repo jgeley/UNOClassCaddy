@@ -46,10 +46,7 @@
 		<div id="end10" data-lat="<%= @end10 %>"></div>
 		<div id="start10" data-lat="<%= @start10 %>"></div>
 		<div id="all10" data-lat="<%= @allDay10 %>"></div>
-		<%= link_to "Back", :controller => :users, :action => :prefsPage%> 
-		<%= link_to "PreviousCalendar", :controller => :users, :action => :nextPage, :myAction => (@pageNum -1)%>
-		<%= link_to "NextCalendar", :controller => :users, :action => :nextPage, :myAction => (@pageNum +1)%>
-		PageNum <%=@pageNum%>
+
 		<script>
 		var title1 = $("#title1").data("lat");
 		var end1 = $("#end1").data("lat");
@@ -137,15 +134,27 @@
 	
 	<section class="information" id="main">
 		<section class="information" id="welcome">
-		<h2>Schedule N</h2>
+		<table id="calHeading">
+		<tr>
+			<td><h4><%= link_to "<<Previous Schedule", :controller => :users, :action => :nextPage, :myAction => (@pageNum -1)%></h4></td>
+			<td><h2>Schedule <%=@pageNum%></h2></td>
+			<td><h4><%= link_to "Next Schedule>>", :controller => :users, :action => :nextPage, :myAction => (@pageNum +1)%></h4></td>
+		</tr>
+		</table>
 		</section>
 	<body>
 		<div id='calendar'></div>
 		
-		<a href="index"><input type="button" value="Edit Classes" /></a> <p></p>
-		<a href="preferences"><input type="button" value="Edit Preferences" /></a>
+		<table id="calButtons">
+		<tr>
+			<td><a href="uno_classes"><input type="button" value="Edit Classes" /></a></td>
+		</tr>
+		<tr>
+			<td><a href="prefsPage"><input type="button" value="Edit Preferences" /></a></td>
+		</tr>
+		</table>
 
-		<a href="">View Printer-Friendly Version</a>
+		<a href="" style="margin-left: 40%;">View Printer-Friendly Version</a>
 	</body>
 	</section>
 

@@ -36,6 +36,9 @@ No classes between: <%= time_field(:preference,:startTime) %> and <%= time_field
 <%= f.submit %>
 <% end %>
 <br />
+
+<!-- Put the selected preferences into a div for styling -->
+<div id="selectedlist"; style="margin-top: -15%">
 Preferences<br /><br />
 <% Preference.all.each do |prefs| %>
 		<%if prefs.sessionid.to_s == request.session_options[:id].to_s%>
@@ -64,11 +67,18 @@ Preferences<br /><br />
 		<%end%>
 		<% end %>
 <br />
-<%= link_to "Continue", :controller => :users, :action => :nextPage%>
+</div>
+
+<table id="prefButtons">
+	<tr>
+		<td><a href="uno_classes"><input type="button" value="Go Back" /></a></td>
+		<td><a href="nextPage"><input type="button" value="See Schedules" /></a></td>
+	</tr>
+</table>
 
 </section>
 
 <!-- Creation information is included in this footer.-->
-<footer>Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
+<footer style="margin-top: 5.2%;">Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
 
 </html>
