@@ -3,7 +3,7 @@ ruby '1.9.3'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.8'
-#gem 'pg'
+gem 'pg'
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 group :development do
@@ -25,5 +25,5 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
-  gem 'pg'
+  #gem 'pg'
 end
