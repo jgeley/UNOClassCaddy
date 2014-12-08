@@ -4,6 +4,7 @@ class UnoClassesController < ApplicationController
   # GET /uno_classes.json
   def index
     @uno_classes = UnoClass.all
+    
     #puts "This is a test"
     render "users/index.html.erb" 
   end

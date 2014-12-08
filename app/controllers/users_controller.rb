@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @pageNum = 0
+    session[:message] = ""
     session[:activate] = 1
     #@users = User.all
     myList = [["A",1],["B"],2]
@@ -55,6 +56,7 @@ class UsersController < ApplicationController
       session[:message] = "No class combinations could be found"
       render "index.html.erb"
     else
+       session[:message] = ""
       setCalendarVars(@calendars, @pageNum)
       render "nextPage"
     end

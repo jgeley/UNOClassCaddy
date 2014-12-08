@@ -59590,3 +59590,322 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-07 21:01:34
 
 
 Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-12-07 21:01:34 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-07 21:04:45 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (1.0ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '00d2708f90610623b33002325c64f786' ORDER BY "sessions"."id" ASC LIMIT 1
+  [1m[36mUnoClass Load (0.0ms)[0m  [1mSELECT "uno_classes".* FROM "uno_classes"[0m
+  Rendered users/index.html.erb within layouts/application (86.1ms)
+Completed 200 OK in 829ms (Views: 809.7ms | ActiveRecord: 5.0ms)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-12-07 21:04:46 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-12-07 21:04:47 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-07 21:04:47 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-12-07 21:04:47 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+Processing by UsersController#index as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.0ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '00d2708f90610623b33002325c64f786' ORDER BY "sessions"."id" ASC LIMIT 1
+  [1m[36mUnoClass Load (0.0ms)[0m  [1mSELECT "uno_classes".* FROM "uno_classes"[0m
+  Rendered users/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 411ms (Views: 408.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-12-07 21:05:04 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-07 21:05:47 -0600
+Processing by UsersController#index as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (1.0ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '00d2708f90610623b33002325c64f786' ORDER BY "sessions"."id" ASC LIMIT 1
+  [1m[36mUnoClass Load (1.0ms)[0m  [1mSELECT "uno_classes".* FROM "uno_classes"[0m
+  Rendered users/index.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 460ms (Views: 453.4ms | ActiveRecord: 5.0ms)
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (15.0ms)[0m  [1mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = 26[0m  [["data", "BAh7CkkiDWFjdGl2YXRlBjoGRUZpBkkiEF9jc3JmX3Rva2VuBjsARkkiMWNR\neXJkTTVEdkFudkZsUkJjWHVPSEtBRWN6S3NNaTFua3ZJY1pQRy9NUWM9BjsA\nRkkiDXBhZ2VfbnVtBjsARmkGSSIOY2FsZW5kYXJzBjsARlsASSIMbWVzc2Fn\nZQY7AEZJIgAGOwBU\n"], ["updated_at", Mon, 08 Dec 2014 03:05:48 UTC +00:00]]
+  [1m[35m (91.1ms)[0m  commit transaction
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:48 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-12-07 21:05:49 -0600
+
+
+Started GET "/prefsPage" for 127.0.0.1 at 2014-12-07 21:05:51 -0600
+Processing by UsersController#prefsPage as HTML
+  [1m[36mUnoClass Load (0.0ms)[0m  [1mSELECT "uno_classes".* FROM "uno_classes"[0m
+  [1m[35mActiveRecord::SessionStore::Session Load (0.0ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '00d2708f90610623b33002325c64f786' ORDER BY "sessions"."id" ASC LIMIT 1
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT "preferences".* FROM "preferences"[0m
+  Rendered users/prefsPage.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 457ms (Views: 439.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/prefsPage" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+Processing by UsersController#prefsPage as HTML
+  [1m[35mUnoClass Load (0.0ms)[0m  SELECT "uno_classes".* FROM "uno_classes"
+  [1m[36mActiveRecord::SessionStore::Session Load (0.0ms)[0m  [1mSELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '00d2708f90610623b33002325c64f786' ORDER BY "sessions"."id" ASC LIMIT 1[0m
+  [1m[35mPreference Load (0.0ms)[0m  SELECT "preferences".* FROM "preferences"
+  Rendered users/prefsPage.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 428ms (Views: 425.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-12-07 21:05:52 -0600
+
+
+Started GET "/nextPage" for 127.0.0.1 at 2014-12-07 21:05:54 -0600
+Processing by UsersController#nextPage as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (0.0ms)[0m  [1mSELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '00d2708f90610623b33002325c64f786' ORDER BY "sessions"."id" ASC LIMIT 1[0m
+  [1m[35mUnoClass Load (0.5ms)[0m  SELECT "uno_classes".* FROM "uno_classes"
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT "preferences".* FROM "preferences"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "uno_classes".* FROM "uno_classes"
+  Rendered users/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1466ms (Views: 516.1ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = 26  [["data", "BAh7CkkiDWFjdGl2YXRlBjoGRUZpBkkiEF9jc3JmX3Rva2VuBjsARkkiMWNR\neXJkTTVEdkFudkZsUkJjWHVPSEtBRWN6S3NNaTFua3ZJY1pQRy9NUWM9BjsA\nRkkiDXBhZ2VfbnVtBjsARmkGSSIOY2FsZW5kYXJzBjsARlsASSIMbWVzc2Fn\nZQY7AEZJIilObyBjbGFzcyBjb21iaW5hdGlvbnMgY291bGQgYmUgZm91bmQG\nOwBU\n"], ["updated_at", Mon, 08 Dec 2014 03:05:55 UTC +00:00]]
+  [1m[36m (118.4ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/nextPage" for 127.0.0.1 at 2014-12-07 21:05:56 -0600
+Processing by UsersController#nextPage as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (1.0ms)[0m  SELECT "sessions".* FROM "sessions" WHERE "sessions"."session_id" = '00d2708f90610623b33002325c64f786' ORDER BY "sessions"."id" ASC LIMIT 1
+  [1m[36mUnoClass Load (0.0ms)[0m  [1mSELECT "uno_classes".* FROM "uno_classes"[0m
+  [1m[35mPreference Load (1.0ms)[0m  SELECT "preferences".* FROM "preferences"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "uno_classes".* FROM "uno_classes"[0m
+  Rendered users/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 1648ms (Views: 432.4ms | ActiveRecord: 2.0ms)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:57 -0600
+
+
+Started GET "/assets/fullcalendar.print.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:57 -0600
+
+
+Started GET "/assets/preferences.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:57 -0600
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/my.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/uno_classes.css?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/preferences.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/uno_classes.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
+
+
+Started GET "/assets/UNO_Logo1.jpg" for 127.0.0.1 at 2014-12-07 21:05:58 -0600
