@@ -49,6 +49,8 @@ class UsersController < ApplicationController
     end
     session[:calendars] = getCalendars()
     @calendars = session[:calendars]
+    puts "Calendars"
+    p @calendars
     if(@pageNum > @calendars.length)
       @pageNum = @calendars.length
     end
@@ -58,6 +60,7 @@ class UsersController < ApplicationController
     else
        session[:message] = ""
       setCalendarVars(@calendars, @pageNum)
+      
       render "nextPage"
     end
   end

@@ -135,11 +135,16 @@ Course : <%= f.select(:course, options_for_select(
 </section>
 <!-- Creation information is included in this footer.-->
 <footer style="margin-top: 15%;">Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
+
 <script>
+var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
 var message = $("#message").data("lat");
 $(document).ready(function(){
 	if(message != ""){
     	alert(message);
+    }
+    if(!is_chrome){
+    	alert("This website only works in chrome");
     }
   });
 </script>
