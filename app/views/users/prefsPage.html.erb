@@ -12,24 +12,24 @@
 	</section>
 	
 <%= form_for Preference.new do |f| %>
-No classes before: <%= time_field(:preference, :startTime) %> on <%= f.select(:day, options_for_select([['Monday',  'M'],['Tuesday',  'Tu'],['Wednesday',  'W'],
-['Thursday',  'Th'],['Friday',  'F'],['Saturday',  'Sa'],['Sunday',  'Su'],])) %>
+No classes before: <%= time_field(:preference, :startTime) %> on <%= f.select(:day, options_for_select([['Monday',  'M'],['Tuesday',  'T'],['Wednesday',  'W'],
+['Thursday',  'R'],['Friday',  'F'],['Saturday',  'Sa'],['Sunday',  'Su'],])) %>
 <br />
 <%= f.text_area :kind, value: "1",style: "display:none;" %>
 <%= f.text_area :sessionid, value: request.session_options[:id], style: "display:none;" %>
 <%= f.submit %>
 <% end %>
 <%= form_for Preference.new do |f| %>
-No classes after: <%= time_field(:preference,:startTime) %> on <%= f.select(:day, options_for_select([['Monday',  'M'],['Tuesday',  'Tu'],['Wednesday',  'W'],
-['Thursday',  'Th'],['Friday',  'F'],['Saturday',  'Sa'],['Sunday',  'Su'],])) %>
+No classes after: <%= time_field(:preference,:startTime) %> on <%= f.select(:day, options_for_select([['Monday',  'M'],['Tuesday',  'T'],['Wednesday',  'W'],
+['Thursday',  'R'],['Friday',  'F'],['Saturday',  'Sa'],['Sunday',  'Su'],])) %>
 <br />
 <%= f.text_area :kind, value: 2, style: "display:none;" %>
 <%= f.text_area :sessionid, value: request.session_options[:id], style: "display:none;" %>
 <%= f.submit %>
 <% end %>
 <%= form_for Preference.new do |f| %>
-No classes between: <%= time_field(:preference,:startTime) %> and <%= time_field(:preference,:endTime) %> on <%= f.select(:day, options_for_select([['Monday',  'M'],['Tuesday',  'Tu'],['Wednesday',  'W'],
-['Thursday',  'Th'],['Friday',  'F'],['Saturday',  'Sa'],['Sunday',  'Su'],])) %>
+No classes between: <%= time_field(:preference,:startTime) %> and <%= time_field(:preference,:endTime) %> on <%= f.select(:day, options_for_select([['Monday',  'M'],['Tuesday',  'T'],['Wednesday',  'W'],
+['Thursday',  'R'],['Friday',  'F'],['Saturday',  'Sa'],['Sunday',  'Su'],])) %>
 <br />
 <%= f.text_area :kind, value: 3, style: "display:none;" %>
 <%= f.text_area :sessionid, value: request.session_options[:id], style: "display:none;" %>
@@ -46,13 +46,41 @@ Preferences<br /><br />
 				<%= "No classes before "%>
 				<%= prefs.startTime.to_formatted_s(:time) %>
 				<%= " on " %>
-				<%= prefs.day%>
+				<%if prefs.day == "M"%>
+				<%= "Monday"%>
+				<%elsif prefs.day == "T"%>
+				<%= "Tuesday"%>
+				<%elsif prefs.day == "W"%>
+				<%= "Wednesday"%>
+				<%elsif prefs.day == "R"%>
+				<%= "Thursday"%>
+				<%elsif prefs.day == "F"%>
+				<%= "Friday"%>
+				<%elsif prefs.day == "Sa"%>
+				<%= "Saturday"%>
+				<%elsif prefs.day == "Su"%>
+				<%= "Sunday"%>
+				<%end%>
 				<%end%>
 			<%if prefs.kind == 2%>
 				<%= "No classes after "%>
 				<%= prefs.startTime.to_formatted_s(:time) %>
 				<%= " on " %>
-				<%= prefs.day%>
+				<%if prefs.day == "M"%>
+				<%= "Monday"%>
+				<%elsif prefs.day == "T"%>
+				<%= "Tuesday"%>
+				<%elsif prefs.day == "W"%>
+				<%= "Wednesday"%>
+				<%elsif prefs.day == "R"%>
+				<%= "Thursday"%>
+				<%elsif prefs.day == "F"%>
+				<%= "Friday"%>
+				<%elsif prefs.day == "Sa"%>
+				<%= "Saturday"%>
+				<%elsif prefs.day == "Su"%>
+				<%= "Sunday"%>
+				<%end%>
 			<%end%>
 			<%if prefs.kind == 3%>
 				<%= "No classes between "%>
@@ -60,9 +88,23 @@ Preferences<br /><br />
 				<%= " and "%>
 				<%= prefs.endTime.to_formatted_s(:time) %>
 				<%= " on " %>
-				<%= prefs.day%>
+				<%if prefs.day == "M"%>
+				<%= "Monday"%>
+				<%elsif prefs.day == "T"%>
+				<%= "Tuesday"%>
+				<%elsif prefs.day == "W"%>
+				<%= "Wednesday"%>
+				<%elsif prefs.day == "R"%>
+				<%= "Thursday"%>
+				<%elsif prefs.day == "F"%>
+				<%= "Friday"%>
+				<%elsif prefs.day == "Sa"%>
+				<%= "Saturday"%>
+				<%elsif prefs.day == "Su"%>
+				<%= "Sunday"%>
+				<%end%>
 			<%end%>
-			<%= link_to 'Destroy', prefs, method: :delete, data: { confirm: 'Are you sure?' } %>
+			<%= link_to 'Remove', prefs, method: :delete, data: { confirm: 'Are you sure?' } %>
 			<br />
 		<%end%>
 		<% end %>

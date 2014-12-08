@@ -26,7 +26,6 @@ class UsersController < ApplicationController
       end
     end
     if total == 0
-      puts "TOTAL: " + total.to_s
       @notice = "You must enter at least one class"
       render "index.html.erb"
     else
@@ -49,8 +48,16 @@ class UsersController < ApplicationController
     end
     session[:calendars] = getCalendars()
     @calendars = session[:calendars]
-    setCalendarVars(@calendars, @pageNum)
-    render "nextPage"
+    if(@pageNum > @calendars.length)
+      @pageNum = @calendars.length
+    end
+    if(@calendars.length == 0)
+      session[:message] = "No class combinations could be found"
+      render "index.html.erb"
+    else
+      setCalendarVars(@calendars, @pageNum)
+      render "nextPage"
+    end
   end
 
   def setCalendarVars(cals, page)
@@ -63,9 +70,9 @@ class UsersController < ApplicationController
       if(c[1] != "TBA")
         c[1] = addTimeIfNecessary(c[1])
         c[2] = addTimeIfNecessary(c[2])
-        startDate = c[3]
-        endDate = c[3]
-        allDay = false
+      startDate = c[3]
+      endDate = c[3]
+      allDay = false
       else
         c[1] = "12:00"
         c[2] = "12:00"
@@ -176,14 +183,122 @@ class UsersController < ApplicationController
 
   def getCalendars()
     classes = getAllClasses()
-    p classes
-    puts "All Classes"
     calendadrs = Array.new
     allClasses = splitClasses(classes)
-    p allClasses
     allCalendars = Array.new
-    getCalendarsRecursive(allClasses, Array.new, allCalendars)
+    theseCals = getCalendarsRecursive(allClasses, Array.new, allCalendars)
+    filterCals = filterCalendars(theseCals)
+    p filterCals
+    filterCals
   #printArrayRec(allCalendars, 0)
+  end
+
+  def filterCalendars(theseCals)
+    list = Array.new
+    prefs = Array.new
+    Preference.all.each do |c|
+      if c.sessionid.to_s == request.session_options[:id].to_s
+        pr = Array.new
+        pr.push(c.kind)
+        pr.push(c.startTime.strftime("%H:%M"))
+        if(c.kind == 3)
+          pr.push(c.endTime.strftime("%H:%M"))
+        end
+        pr.push(getDate(c.day))
+      prefs.push(pr)
+      end
+    end
+    valid = true
+    theseCals.each do |c|
+      toAdd = Array.new
+      c.each do |cl|
+        thisValid = isValid(cl, prefs)
+        if thisValid == false
+        break
+        else
+        prefs.push(thisValid)
+        toAdd.push(cl)
+        end
+      end
+      if(!toAdd.empty?)
+      list.push(toAdd)
+      end
+    end
+    list
+  end
+
+  def isValid(c, prefs)
+    valid = true
+    prefs.each do |pref|
+      if pref.fetch(0) == 1
+        if(pref.fetch(2)  == c.fetch(3))
+          t1 = Time.parse(pref.fetch(1))
+          t2 = Time.parse(c.fetch(1))
+          if t2 < t1
+          valid = false
+          break
+          end
+        end
+      end
+      if pref.fetch(0) == 2
+        if(pref.fetch(2)  == c.fetch(3))
+          t1 = Time.parse(pref.fetch(1))
+          t2 = Time.parse(c.fetch(2))
+          if t2 > t1
+          valid = false
+          break
+          end
+        end
+      end
+      if pref.fetch(0) == 3
+        if(pref.fetch(3)  == c.fetch(3))
+          prefT1 = Time.parse(pref.fetch(1))
+          prefT2 = Time.parse(pref.fetch(2))
+          cT1 = Time.parse(c.fetch(2))
+          cT2 = Time.parse(c.fetch(2))
+          if (cT1 > prefT1 && cT1 < prefT2) || (cT2 > prefT1 && cT2 < prefT2)
+          valid = false
+          break
+          end
+          if(cT1 < prefT1 && cT2 > prefT2)
+          valid = false
+          break
+          end
+        end
+      end
+    end
+    if(valid)
+      puts "Valid"
+      pref = Array.new
+    pref.push(3)
+    pref.push(c.fetch(1))
+    pref.push(c.fetch(2))
+    pref.push(c.fetch(3))
+    return pref
+    else
+      puts "Not Valid"
+    end
+    valid
+  end
+
+  def getDate(day)
+    ret = ""
+    if(day == "M")
+      ret = "2001-01-01"
+    elsif (day == "T")
+      ret = "2001-01-02"
+    elsif (day == "W")
+      ret = "2001-01-03"
+    elsif (day == "R")
+      ret = "2001-01-04"
+    elsif (day == "F")
+      ret = "2001-01-05"
+    elsif (day == "Sa")
+      ret = "2001-01-06"
+    elsif (day == "Su")
+      ret = "2001-01-07"
+    end
+    ret
   end
 
   def getCalendarsRecursive(classes, currentCalendar, allCalendars)
@@ -216,7 +331,7 @@ class UsersController < ApplicationController
     classes.each do |myClass|
       classGroup = Array.new
       myClass.each do |c|
-        newDate = Date.strptime('2018-01-01', '%Y-%m-%d')
+        newDate = Date.strptime('2001-01-01', '%Y-%m-%d')
         individualClassGroup = Array.new
         for i in 1..5
           if(newDate.wday == 1)
@@ -309,8 +424,7 @@ class UsersController < ApplicationController
       doc.search('//th').each do |tr|
         str = tr.content
         if(str.include? "Section")
-          puts "added " + str + " to section list"
-          sectionList.push(str)
+        sectionList.push(str)
         end
       end
       currentSection = 0

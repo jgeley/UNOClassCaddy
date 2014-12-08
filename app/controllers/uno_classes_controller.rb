@@ -1,12 +1,11 @@
 class UnoClassesController < ApplicationController
   before_action :set_uno_class, only: [:show, :edit, :update, :destroy]
-
   # GET /uno_classes
   # GET /uno_classes.json
   def index
     @uno_classes = UnoClass.all
     #puts "This is a test"
-    render "users/index.html.erb"
+    render "users/index.html.erb" 
   end
 
   # GET /uno_classes/1
@@ -29,12 +28,31 @@ class UnoClassesController < ApplicationController
     @uno_class = UnoClass.new(uno_class_params)
 
     respond_to do |format|
-      if @uno_class.save
-        format.html { redirect_to action: :index}
+      if validClass(@uno_class)
+        if @uno_class.save
+          session[:message] = ""
+          format.html { redirect_to action: :index}
+        else
+          format.html { render action: "new" }
+        end
       else
-        format.html { render action: "new" }
+        session[:message] = "Class did not exist"
+        format.html { redirect_to action: :index}
       end
     end
+  end
+
+  def validClass(unoClass)
+    termNum = 1151
+    classDep = unoClass.department
+    classNumber = unoClass.course
+    url = "http://www.unomaha.edu/class-search/?term="+ termNum.to_s + "&session=&subject=" + classDep.to_s + "&catalog_nbr=" + classNumber.to_s + "&career=&instructor=&class_start_time=&class_end_time=&location=&special=&instruction_mode="
+    doc = Nokogiri::HTML(open(url))
+    found = false
+    doc.search('//table/tr/td/table/tr').each do |tr|
+      found = true
+    end
+    return found
   end
 
   # PATCH/PUT /uno_classes/1
@@ -62,13 +80,14 @@ class UnoClassesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_uno_class
-      @uno_class = UnoClass.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def uno_class_params
-      params.require(:uno_class).permit(:department, :course, :section, :startTime, :endTime, :days, :location, :instructor, :sessionId)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_uno_class
+    @uno_class = UnoClass.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def uno_class_params
+    params.require(:uno_class).permit(:department, :course, :section, :startTime, :endTime, :days, :location, :instructor, :sessionId)
+  end
 end
