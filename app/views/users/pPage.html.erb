@@ -127,38 +127,8 @@
 
 </html>
 
-	<header>
-	<%= image_tag 'UNO_Logo1.jpg', size: '150x150' %>
-	<p>UNO ClassCaddy</p>
-	</header>
 	
-	<section class="information" id="main">
-		<section class="information" id="welcome">
-		<table id="calHeading">
-		<tr>
-			<td><h4><%= link_to "<<Previous Schedule", :controller => :users, :action => :nextPage, :myAction => (@pageNum -1)%></h4></td>
-			<td><h2>Schedule <%=@pageNum%></h2></td>
-			<td><h4><%= link_to "Next Schedule>>", :controller => :users, :action => :nextPage, :myAction => (@pageNum +1)%></h4></td>
-		</tr>
-		</table>
-		</section>
 	<body>
 		<div id='calendar'></div>
-		
-		<table id="calButtons">
-		<tr>
-			<td><a href="uno_classes"><input type="button" value="Edit Classes" /></a></td>
-		</tr>
-		<tr class="spacer"><td> <br /></td></tr>
-		<tr>
-			<td><a href="prefsPage"><input type="button" value="Edit Preferences" /></a></td>
-		</tr>
-		</table>
-
-		<a href="" style="margin-left: 42%;"><%= link_to "View Printer-Friendly Version", "/users/pPage" %></a>
-		
 	</body>
 	</section>
-
-	<!-- Creation information is included in this footer.-->
-	<footer style="margin-top: 5%;">Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
