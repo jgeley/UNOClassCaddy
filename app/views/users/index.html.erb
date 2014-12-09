@@ -10,6 +10,7 @@
 	<p><strong>Welcome to ClassCaddy, the course scheduling assistant for UNO students!</strong>  To begin, please select the term you're considering.  Then, pick the classes
 	you're interested in taking, and hit Continue.  Fields marked with an asterisk (*) are required.</p>
 	</section>
+<br />
 <%= form_for UnoClass.new do |f| %>
 Department: <%= f.select(:department, options_for_select([['Accounting',  'ACCT'],['Aerospace Studies',  'AERO'],['Anthropology',  'ANTH'],['Architectural Engineering',  'AE'],['Architecture','ARCH'],
 ['Art','ART'],['Aviation',  'AVN'],['Bioinformatics',  'BIOI'],['Biology',  'BIOL'],['Biomedical Informatics',  'BMI'],['Black Studies',  'BLST'],['Broadcasting',  'BRCT'],
@@ -27,7 +28,7 @@ Department: <%= f.select(:department, options_for_select([['Accounting',  'ACCT'
 ['Religion',  'RELI'],['Russian',  'RUSS'],['Social Work',  'SOWK'],['Sociology',  'SOC'],['Spanish',  'SPAN'],['Spec Educ & Comm Disorders',  'SPED'],['Speech',  'SPCH'],['Statistics',  'STAT'],
 ['Teacher Education',  'TED'],['Theatre',  'THEA'],['University Seminar',  'US'],['Urban Studies',  'UBNS'],['Womens and Gender Studies',  'WGST'],['Writers Workshop',  'WRWS']])
 ) %>
-<br />
+<br /><br />
 Course : <%= f.select(:course, options_for_select(
 [['1000','1000'],['1010','1010'],['1014','1014'],['1020','1020'],['1024','1024'],['1030','1030'],['1034','1034'],['1040','1040'],['1050','1050'],['1054','1054'],['1060','1060'],
 ['1070','1070'],['1080','1080'],['1090','1090'],['1100','1100'],['1104','1104'],['1110','1110'],['1114','1114'],['111A','111A'],['111C','111C'],['111D','111D'],['111E','111E'],
@@ -96,20 +97,19 @@ Course : <%= f.select(:course, options_for_select(
 ['9230','9230'],['9400','9400'],['9460','9460'],['9470','9470'],['9500','9500'],['9520','9520'],['9550','9550'],['9570','9570'],['9600','9600'],['9610','9610'],['9620','9620'],
 ['9650','9650'],['9660','9660'],['9670','9670'],['9700','9700'],['9780','9780'],['9800','9800'],['9900','9900'],['9910','9910'],['9920','9920'],['9940','9940'],['9950','9950'],
 ['9960','9960'],['9970','9970'],['998','998'],['9980','9980'],['999','999'],['9990','9990']])) %>
-<br />
+<br /><br />
 <%= f.text_area :sessionId, value: request.session_options[:id], style: "display:none;" %>
 <%= f.submit %>
 <% end %>
 <br />
 
 <!-- Put the table of selected classes into a div for styling -->
-<div id="selectedlist">
+<div id="selectedclasses">
 <table>
 	<thead>
 		<tr>
 			<th>Department</th>
 			<th>Course</th>
-			<th>Section</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -120,7 +120,6 @@ Course : <%= f.select(:course, options_for_select(
 		<tr>
 			<td><%= uno_class.department %></td>
 			<td><%= uno_class.course %></td>
-			<td><%= uno_class.section %></td>
 			<td><%= link_to 'Remove', uno_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		</tr>
 		<%end%>
@@ -134,7 +133,7 @@ Course : <%= f.select(:course, options_for_select(
 <br /><%= @notice %>
 </section>
 <!-- Creation information is included in this footer.-->
-<footer style="margin-top: 15%;">Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
+<footer style="margin-top: 5%;">Created by Erik Dodge, Joseph Eley, Christian Ressler, Jason Lynn and Ibrahim Nikiema</footer>
 
 <script>
 var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;

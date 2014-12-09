@@ -65,6 +65,11 @@ input[value="See Schedules"] {
 	margin-left: 385%;
 }
 
+input[value="Continue"] {
+	margin-top: 10%;
+	margin-left: 80%;
+}
+
 #prefButtons {
 	margin-top: 5%;
 
@@ -100,9 +105,15 @@ input[value="See Schedules"] {
 	font: 100% "Footlight MT Light", serif;
 }
 
-#selectedlist {
+#selectedclasses {
 	float: right;
-	margin-top: -5%;
+	margin-top: -9%;
+	margin-right: 5%;
+}
+
+#selectedprefs {
+	float: right;
+	margin-top: -8%;
 	margin-right: 5%;
 }
 
