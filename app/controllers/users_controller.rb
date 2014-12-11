@@ -27,12 +27,18 @@ class UsersController < ApplicationController
       end
     end
     if total == 0
-      @notice = "You must enter at least one class"
+      session[:message] = "You must enter at least one class"
       render "index.html.erb"
     else
+      session[:message]  = ""
       render "prefsPage"
     end
   #render "prefsPage"
+  end
+
+  def pPage
+    puts "HERE IS WORKING"
+    render "pPage.html.erb"
   end
 
   def nextPage
@@ -58,9 +64,9 @@ class UsersController < ApplicationController
       session[:message] = "No class combinations could be found"
       render "index.html.erb"
     else
-       session[:message] = ""
+      session[:message] = ""
       setCalendarVars(@calendars, @pageNum)
-      
+
       render "nextPage"
     end
   end
@@ -524,7 +530,33 @@ class UsersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.find(params[:id])
+    session[:page_num] = params[:myAction].to_i
+    if(session[:page_num]== nil)
+      session[:page_num]= 1
+    end
+    if(params[:myAction].to_i < 1)
+      session[:page_num] = 1
+    end
+    @pageNum = session[:page_num]
+    if(session[:calendars] == nil)
+      session[:calendars] = getCalendars()
+    end
+    session[:calendars] = getCalendars()
+    @calendars = session[:calendars]
+    puts "Calendars"
+    p @calendars
+    if(@pageNum > @calendars.length)
+      @pageNum = @calendars.length
+    end
+    if(@calendars.length == 0)
+      session[:message] = "No class combinations could be found"
+      render "index.html.erb"
+    else
+      session[:message] = ""
+      setCalendarVars(@calendars, @pageNum)
+
+      render "pPage"
+    end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
